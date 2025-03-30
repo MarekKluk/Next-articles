@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Container, Typography, Button, Box } from '@mui/material';
 
-export default function Home() {
+export default function About() {
   return (
     <Container maxWidth="md">
       <Box
@@ -16,21 +16,21 @@ export default function Home() {
         }}
       >
         <Typography variant="h2" component="h1" gutterBottom>
-          Welcome to Next Articles
+          About Us
         </Typography>
         <Typography variant="h5" color="text.secondary" paragraph>
-          This is the home page of our application.
+          This is the about page of our application.
         </Typography>
         <Button
           component={Link}
-          href="/about"
+          href="/"
           variant="contained"
           size="large"
           sx={{ mt: 2 }}
         >
-          Go to About Page
+          Back to Home
         </Button>
       </Box>
     </Container>
   );
-}
+} 
