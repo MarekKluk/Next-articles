@@ -6,7 +6,9 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
@@ -14,17 +16,25 @@
     "@mui/icons-material": "^7.0.1",
     "@mui/material": "^7.0.1",
     "@mui/material-nextjs": "^7.0.0",
+    "@prisma/client": "^6.9.0",
+    "bcrypt": "^6.0.0",
     "next": "15.2.4",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
+    "@types/bcrypt": "^5.0.2",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "15.2.4",
+    "prettier": "^3.6.2",
+    "prisma": "^6.9.0",
     "typescript": "^5"
+  },
+  "prisma": {
+    "schema": "prisma/schema.prisma"
   }
 }

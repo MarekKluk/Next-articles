@@ -1,9 +1,9 @@
-import type { Metadata } from "next";
+import type { Metadata } from 'next';
 import Providers from './providers';
 
 export const metadata: Metadata = {
-  title: "Next Articles",
-  description: "A simple Next.js application",
+  title: 'Next Articles',
+  description: 'A simple Next.js application',
 };
 
 export default function RootLayout({
@@ -12,11 +12,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang='en'>
       <body>
-        <Providers>
-          {children}
-        </Providers>
+        <Providers>{children}</Providers>
       </body>
     </html>
   );
