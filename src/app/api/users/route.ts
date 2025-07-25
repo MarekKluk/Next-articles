@@ -1,9 +1,6 @@
 import { NextResponse } from 'next/server';
-import bcrypt from 'bcrypt';
 import { Prisma } from '@prisma/client';
 import { prisma as db } from '@lib/prisma';
-
-const SALT_ROUNDS = 10;
 
 export async function POST(request: Request) {
   try {
@@ -30,10 +27,12 @@ export async function POST(request: Request) {
       );
     }
 
-    const hashedPassword = await bcrypt.hash(
-      password,
-      SALT_ROUNDS
-    );
+    const hashedPassword =
+      await Bun.password.hash(password, {
+        algorithm: 'argon2id',
+        memoryCost: 4, // memory usage in kibibytes
+        timeCost: 3, // the number of iterations
+      });
 
     const user = await db.user.create({
       data: {
